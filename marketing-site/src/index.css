@@ -89,6 +89,15 @@
   }
 }
 
+/* Hide scrollbar for phone content */
+.phone-scroll::-webkit-scrollbar {
+  display: none;
+}
+.phone-scroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;

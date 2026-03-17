@@ -14,96 +14,7 @@ import {
   Eye,
   Brain,
 } from 'lucide-react'
-
-function MobileShowcase() {
-  return (
-    <div className="relative">
-      {/* Phone frame */}
-      <div className="relative mx-auto w-[280px] sm:w-[320px]">
-        {/* Glow */}
-        <div className="absolute inset-0 bg-gradient-to-b from-sky-500/20 to-indigo-500/20 blur-3xl rounded-full scale-150" />
-
-        <div className="relative glass rounded-[36px] p-2">
-          <div className="bg-slate-900 rounded-[28px] overflow-hidden">
-            {/* Status bar */}
-            <div className="flex items-center justify-between px-6 py-2 text-[10px] text-slate-400">
-              <span>9:41</span>
-              <div className="w-24 h-5 bg-black rounded-full" />
-              <span>100%</span>
-            </div>
-
-            {/* App header */}
-            <div className="px-5 py-3 border-b border-white/5">
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-sky-500 to-indigo-500 flex items-center justify-center">
-                  <span className="text-[10px] font-bold">H</span>
-                </div>
-                <span className="text-sm font-bold">HarborAI</span>
-                <span className="ml-auto text-[10px] text-emerald-400">Online</span>
-              </div>
-            </div>
-
-            {/* Chat messages */}
-            <div className="p-4 space-y-3 min-h-[300px]">
-              <div className="flex gap-2">
-                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-sky-500 to-indigo-500 flex-shrink-0" />
-                <div className="bg-indigo-500/10 rounded-xl rounded-tl-sm px-3 py-2 max-w-[200px]">
-                  <p className="text-[11px] text-slate-200 leading-relaxed">
-                    Hey Sarah! I've looked at your financial picture. Here's what I recommend:
-                  </p>
-                </div>
-              </div>
-
-              {/* Offer card */}
-              <div className="ml-8 bg-emerald-500/10 border border-emerald-500/20 rounded-xl px-3 py-3">
-                <div className="flex items-center gap-1 mb-1.5">
-                  <span className="text-[8px] font-bold px-1.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400">RECOMMENDED</span>
-                </div>
-                <p className="text-base font-bold font-mono text-white">$2,100</p>
-                <p className="text-[10px] text-emerald-400">Settlement — save 50%</p>
-                <div className="mt-2 w-full py-1.5 rounded-lg bg-gradient-to-r from-sky-500 to-indigo-500 text-center text-[10px] font-semibold">
-                  Accept Offer
-                </div>
-              </div>
-
-              {/* Alt offer */}
-              <div className="ml-8 bg-white/5 border border-white/5 rounded-xl px-3 py-2">
-                <p className="text-[11px] font-semibold text-slate-300">$85/mo x 12 months</p>
-                <p className="text-[9px] text-slate-500">Reduced APR plan</p>
-              </div>
-
-              {/* User response */}
-              <div className="flex justify-end">
-                <div className="bg-gradient-to-r from-sky-500 to-indigo-500 rounded-xl rounded-tr-sm px-3 py-2 max-w-[160px]">
-                  <p className="text-[11px]">I'll take the settlement!</p>
-                </div>
-              </div>
-
-              <div className="flex gap-2">
-                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-sky-500 to-indigo-500 flex-shrink-0" />
-                <div className="bg-indigo-500/10 rounded-xl rounded-tl-sm px-3 py-2 max-w-[200px]">
-                  <p className="text-[11px] text-slate-200">
-                    Amazing! Your settlement is locked in. Sending confirmation now.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Bottom bar */}
-            <div className="px-4 py-3 border-t border-white/5 flex gap-2">
-              <div className="flex-1 bg-white/5 rounded-full px-3 py-2 text-[10px] text-slate-500">
-                Type a message...
-              </div>
-              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-sky-500 to-indigo-500 flex items-center justify-center">
-                <span className="text-xs">↑</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
+import PhoneApp from '../phone-demo/PhoneApp'
 
 function CopilotShowcase() {
   return (
@@ -326,7 +237,7 @@ export default function Products() {
               animate={mobileInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.2 }}
             >
-              <MobileShowcase />
+              <PhoneApp scale={0.62} />
             </motion.div>
           </div>
         </div>
