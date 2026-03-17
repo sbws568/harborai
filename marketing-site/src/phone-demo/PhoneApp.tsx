@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Home, MessageCircle, Target, ClipboardList, Settings, Wifi, Battery, Signal } from 'lucide-react'
 import HomeScreen from './screens/HomeScreen'
@@ -48,6 +48,11 @@ export default function PhoneApp({ scale = 0.65 }: PhoneAppProps) {
 
   const navigate = (tab: TabId) => setActiveTab(tab)
 
+  // Prevent scroll events inside the phone from bubbling to the page
+  const stopScrollPropagation = useCallback((e: React.WheelEvent | React.TouchEvent) => {
+    e.stopPropagation()
+  }, [])
+
   const renderScreen = () => {
     switch (activeTab) {
       case 'home':
@@ -88,7 +93,12 @@ export default function PhoneApp({ scale = 0.65 }: PhoneAppProps) {
             }}
           >
             {/* Screen area */}
-            <div className="absolute inset-[3px] rounded-[47px] overflow-hidden bg-slate-950 flex flex-col">
+            <div
+              className="absolute inset-[3px] rounded-[47px] overflow-hidden bg-slate-950 flex flex-col"
+              onWheel={stopScrollPropagation}
+              onTouchMove={stopScrollPropagation}
+              style={{ overscrollBehavior: 'contain' }}
+            >
               <StatusBar />
 
               {/* Header bar */}

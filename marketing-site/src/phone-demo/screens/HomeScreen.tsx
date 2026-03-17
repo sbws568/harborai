@@ -32,7 +32,7 @@ export default function HomeScreen({ navigate }: HomeScreenProps) {
   ]
 
   return (
-    <div className="h-full overflow-y-auto phone-scroll bg-slate-950">
+    <div className="h-full overflow-y-auto phone-scroll bg-slate-950" style={{ overscrollBehavior: 'contain' }}>
       <div className="px-5 pt-4 pb-8">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">

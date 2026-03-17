@@ -37,6 +37,7 @@ interface ChatScreenProps {
 
 export default function ChatScreen({ navigate }: ChatScreenProps) {
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [messages, setMessages] = useState<Message[]>([])
   const [inputText, setInputText] = useState('')
   const [phase, setPhase] = useState<ConversationPhase>('welcome')
@@ -48,7 +49,12 @@ export default function ChatScreen({ navigate }: ChatScreenProps) {
   phaseRef.current = phase
 
   const scrollToBottom = useCallback(() => {
-    setTimeout(() => messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' }), 50)
+    setTimeout(() => {
+      const container = scrollContainerRef.current
+      if (container) {
+        container.scrollTop = container.scrollHeight
+      }
+    }, 50)
   }, [])
 
   const addMessage = useCallback((text: string, isUser: boolean, component?: Message['component']) => {
@@ -220,7 +226,7 @@ export default function ChatScreen({ navigate }: ChatScreenProps) {
   return (
     <div className="h-full flex flex-col bg-slate-950">
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto phone-scroll px-4 py-4">
+      <div ref={scrollContainerRef} className="flex-1 overflow-y-auto phone-scroll px-4 py-4" style={{ overscrollBehavior: 'contain' }}>
         <AnimatePresence>
           {messages.map((msg) => (
             <div key={msg.id}>

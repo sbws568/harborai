@@ -18,7 +18,7 @@ export default function OffersScreen({ navigate }: OffersScreenProps) {
   }
 
   return (
-    <div className="h-full overflow-y-auto phone-scroll bg-slate-950">
+    <div className="h-full overflow-y-auto phone-scroll bg-slate-950" style={{ overscrollBehavior: 'contain' }}>
       {/* Header gradient */}
       <div
         className="p-7 pt-5 flex flex-col items-center"

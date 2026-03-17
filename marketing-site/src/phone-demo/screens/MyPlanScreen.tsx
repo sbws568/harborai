@@ -29,7 +29,7 @@ interface MyPlanScreenProps {
 
 export default function MyPlanScreen({ navigate }: MyPlanScreenProps) {
   return (
-    <div className="h-full overflow-y-auto phone-scroll bg-slate-950">
+    <div className="h-full overflow-y-auto phone-scroll bg-slate-950" style={{ overscrollBehavior: 'contain' }}>
       {/* Status header */}
       <div
         className="p-6 pt-4 flex flex-col items-center"

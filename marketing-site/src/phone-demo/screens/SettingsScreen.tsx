@@ -64,7 +64,7 @@ export default function SettingsScreen() {
   const [darkMode, setDarkMode] = useState(true)
 
   return (
-    <div className="h-full overflow-y-auto phone-scroll bg-slate-950">
+    <div className="h-full overflow-y-auto phone-scroll bg-slate-950" style={{ overscrollBehavior: 'contain' }}>
       <div className="pb-8">
         {/* Profile Card */}
         <motion.div
