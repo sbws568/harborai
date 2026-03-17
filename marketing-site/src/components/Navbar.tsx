@@ -9,7 +9,7 @@ const navLinks = [
   { label: 'Pricing', href: '#pricing' },
 ]
 
-export default function Navbar() {
+export default function Navbar({ onWatchDemo }: { onWatchDemo: () => void }) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -58,9 +58,9 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden md:flex items-center gap-4">
-            <a href="#demo" className="text-sm text-slate-300 hover:text-white transition-colors">
+            <button onClick={onWatchDemo} className="text-sm text-slate-300 hover:text-white transition-colors">
               Watch Demo
-            </a>
+            </button>
             <a
               href="#contact"
               className="px-5 py-2.5 text-sm font-semibold rounded-full bg-gradient-to-r from-sky-500 via-indigo-500 to-violet-500 hover:shadow-lg hover:shadow-indigo-500/25 transition-all hover:scale-105 active:scale-95"
