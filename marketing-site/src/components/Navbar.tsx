@@ -38,8 +38,8 @@ export default function Navbar({ onWatchDemo }: { onWatchDemo: () => void }) {
             <div className="shadow-lg shadow-indigo-500/25 group-hover:shadow-indigo-500/40 transition-shadow rounded-xl">
               <LogoMark size={36} />
             </div>
-            <span className="text-xl tracking-tight">
-              <span className="font-medium text-slate-200">ease</span><span className="font-bold gradient-text">financials</span>
+            <span className="text-xl font-semibold tracking-tight text-white">
+              EaseFinancials
             </span>
           </a>
 

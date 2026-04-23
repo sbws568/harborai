@@ -41,8 +41,8 @@ export default function Footer() {
           <div className="col-span-2">
             <a href="#" className="flex items-center gap-2.5 mb-4">
               <LogoMark size={32} />
-              <span className="text-lg tracking-tight">
-                <span className="font-medium text-slate-200">ease</span><span className="font-bold gradient-text">financials</span>
+              <span className="text-lg font-semibold tracking-tight text-white">
+                EaseFinancials
               </span>
             </a>
             <p className="text-sm text-slate-400 mb-6 max-w-xs leading-relaxed">
