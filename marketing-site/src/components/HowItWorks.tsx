@@ -112,7 +112,7 @@ export default function HowItWorks() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
-    <section id="how-it-works" ref={ref} className="relative py-32 overflow-hidden">
+    <section id="how-it-works" ref={ref} className="relative py-16 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-violet-500/5 blur-[120px] rounded-full" />

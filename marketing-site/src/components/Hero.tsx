@@ -109,7 +109,7 @@ export default function Hero({ onWatchDemo }: { onWatchDemo: () => void }) {
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="mt-20 relative max-w-4xl mx-auto"
+          className="mt-12 relative max-w-4xl mx-auto"
         >
           {/* Glow behind */}
           <div className="absolute inset-0 bg-gradient-to-r from-sky-500/20 via-indigo-500/20 to-violet-500/20 blur-3xl rounded-3xl" />

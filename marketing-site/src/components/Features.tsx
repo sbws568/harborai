@@ -64,13 +64,13 @@ export default function Features() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
-    <section id="features" ref={ref} className="relative py-32">
+    <section id="features" ref={ref} className="relative py-16">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-12"
         >
           <span className="text-sm font-semibold text-indigo-400 tracking-wider uppercase mb-4 block">
             Features

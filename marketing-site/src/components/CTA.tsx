@@ -6,7 +6,7 @@ export default function CTA() {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true })
 
   return (
-    <section id="contact" ref={ref} className="relative py-32 overflow-hidden">
+    <section id="contact" ref={ref} className="relative py-16 overflow-hidden">
       {/* Massive gradient background */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full opacity-30"

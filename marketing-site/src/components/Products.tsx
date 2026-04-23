@@ -187,10 +187,10 @@ export default function Products() {
   const { ref: copilotRef, inView: copilotInView } = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
-    <section id="products" className="relative py-32 overflow-hidden">
+    <section id="products" className="relative py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
-          <span className="text-sm font-semibold text-indigo-400 tracking-wider uppercase mb-4 block">
+          <span className="text-sm font-semibold text-indigo-400 tracking-wider uppercase mb-3 block">
             Two Products, One Platform
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold">
@@ -199,7 +199,7 @@ export default function Products() {
         </div>
 
         {/* Mobile App */}
-        <div ref={mobileRef} className="mb-32">
+        <div ref={mobileRef} className="mb-16">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}

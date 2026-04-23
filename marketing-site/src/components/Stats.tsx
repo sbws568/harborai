@@ -39,7 +39,7 @@ export default function Stats() {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true })
 
   return (
-    <section ref={ref} className="relative py-32 overflow-hidden">
+    <section ref={ref} className="relative py-16 overflow-hidden">
       {/* Background accent */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-indigo-500/5 blur-[100px] rounded-full" />

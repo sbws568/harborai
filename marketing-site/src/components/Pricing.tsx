@@ -69,7 +69,7 @@ export default function Pricing() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
-    <section id="pricing" ref={ref} className="relative py-32">
+    <section id="pricing" ref={ref} className="relative py-16">
       {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-500/5 blur-[120px] rounded-full" />
