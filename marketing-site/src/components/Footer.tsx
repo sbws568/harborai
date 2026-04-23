@@ -1,4 +1,5 @@
-import { TrendingUp, Github, Linkedin, Twitter } from 'lucide-react'
+import { Github, Linkedin, Twitter } from 'lucide-react'
+import LogoMark from './LogoMark'
 
 const footerLinks = {
   Product: [
@@ -39,11 +40,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-2">
             <a href="#" className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-sky-500 via-indigo-500 to-violet-500 flex items-center justify-center">
-                <TrendingUp className="w-4 h-4 text-white" strokeWidth={2.5} />
-              </div>
-              <span className="text-lg font-bold">
-                ease<span className="gradient-text">financials</span>
+              <LogoMark size={32} />
+              <span className="text-lg tracking-tight">
+                <span className="font-medium text-slate-200">ease</span><span className="font-bold gradient-text">financials</span>
               </span>
             </a>
             <p className="text-sm text-slate-400 mb-6 max-w-xs leading-relaxed">
