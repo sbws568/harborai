@@ -31,7 +31,7 @@ function CopilotShowcase() {
               <div className="w-2.5 h-2.5 rounded-full bg-amber-500/60" />
               <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/60" />
             </div>
-            <span className="text-[10px] text-slate-400 font-mono ml-2">HarborAI Agent Copilot</span>
+            <span className="text-[10px] text-slate-400 font-mono ml-2">easefinancials Agent Copilot</span>
             <div className="ml-auto flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
               <span className="text-[10px] text-slate-400 font-mono">12:34</span>

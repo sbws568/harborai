@@ -90,7 +90,7 @@ export default function Comparison() {
                 <Check className="w-5 h-5 text-emerald-400" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-white">With HarborAI</h3>
+                <h3 className="text-xl font-bold text-white">With easefinancials</h3>
                 <p className="text-xs text-emerald-400">AI-powered, personalized</p>
               </div>
             </div>

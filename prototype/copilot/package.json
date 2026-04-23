@@ -1,7 +1,7 @@
 {
-  "name": "harborai-agent-copilot",
+  "name": "easefinancials-agent-copilot",
   "version": "0.1.0",
-  "description": "HarborAI Agent Copilot - Hardship Assistance Desktop Application",
+  "description": "easefinancials Agent Copilot - Hardship Assistance Desktop Application",
   "main": "dist/electron/main.js",
   "scripts": {
     "dev": "vite",
@@ -36,8 +36,8 @@
     "@typescript-eslint/parser": "^6.20.0"
   },
   "build": {
-    "appId": "com.harborai.copilot",
-    "productName": "HarborAI Agent Copilot",
+    "appId": "com.easefinancials.copilot",
+    "productName": "easefinancials Agent Copilot",
     "directories": {
       "output": "release"
     },

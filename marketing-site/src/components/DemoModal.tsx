@@ -51,7 +51,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                   </div>
                   <div className="flex-1 flex justify-center">
                     <div className="px-4 py-1 rounded-lg bg-white/5 text-xs text-slate-500 font-mono">
-                      HarborAI — Product Demo
+                      easefinancials — Product Demo
                     </div>
                   </div>
                 </div>

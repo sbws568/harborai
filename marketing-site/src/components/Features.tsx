@@ -81,7 +81,7 @@ export default function Features() {
             <span className="gradient-text">transform hardship assistance</span>
           </h2>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            From AI-powered conversations to verified financial data — HarborAI gives lending
+            From AI-powered conversations to verified financial data — easefinancials gives lending
             institutions the tools to help customers when they need it most.
           </p>
         </motion.div>

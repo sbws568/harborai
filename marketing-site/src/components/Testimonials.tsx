@@ -4,7 +4,7 @@ import { Star, Quote } from 'lucide-react'
 
 const testimonials = [
   {
-    quote: "Our settlement acceptance rate jumped from 38% to 57% in the first quarter. HarborAI's personalized offers actually match what customers can afford.",
+    quote: "Our settlement acceptance rate jumped from 38% to 57% in the first quarter. easefinancials' personalized offers actually match what customers can afford.",
     name: 'Rebecca Chen',
     role: 'VP Collections Strategy',
     company: 'Regional Credit Union ($4B AUM)',
@@ -31,7 +31,7 @@ const testimonials = [
     color: 'from-violet-500 to-pink-500',
   },
   {
-    quote: "Compliance was our biggest concern. HarborAI's built-in guardrails and audit trail made our legal team comfortable from day one. FFIEC sign-off was smooth.",
+    quote: "Compliance was our biggest concern. easefinancials' built-in guardrails and audit trail made our legal team comfortable from day one. FFIEC sign-off was smooth.",
     name: 'David Park',
     role: 'Chief Compliance Officer',
     company: 'Digital Lending Platform',

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Anchor } from 'lucide-react'
+import { Menu, X, TrendingUp } from 'lucide-react'
 
 const navLinks = [
   { label: 'Features', href: '#features' },
@@ -35,10 +35,10 @@ export default function Navbar({ onWatchDemo }: { onWatchDemo: () => void }) {
           {/* Logo */}
           <a href="#" className="flex items-center gap-2.5 group">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-500 via-indigo-500 to-violet-500 flex items-center justify-center shadow-lg shadow-indigo-500/25 group-hover:shadow-indigo-500/40 transition-shadow">
-              <Anchor className="w-5 h-5 text-white" strokeWidth={2.5} />
+              <TrendingUp className="w-5 h-5 text-white" strokeWidth={2.5} />
             </div>
             <span className="text-xl font-bold tracking-tight">
-              Harbor<span className="gradient-text">AI</span>
+              ease<span className="gradient-text">financials</span>
             </span>
           </a>
 

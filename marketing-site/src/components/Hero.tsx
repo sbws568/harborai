@@ -126,7 +126,7 @@ export default function Hero({ onWatchDemo }: { onWatchDemo: () => void }) {
                 </div>
                 <div className="flex-1 flex justify-center">
                   <div className="px-4 py-1 rounded-lg bg-white/5 text-xs text-slate-500 font-mono">
-                    app.harborai.com
+                    app.easefinancials.com
                   </div>
                 </div>
               </div>
@@ -141,7 +141,7 @@ export default function Hero({ onWatchDemo }: { onWatchDemo: () => void }) {
                   className="flex gap-3 max-w-lg"
                 >
                   <div className="w-8 h-8 rounded-full bg-gradient-to-br from-sky-500 to-indigo-500 flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-xs font-bold">H</span>
+                    <span className="text-xs font-bold">E</span>
                   </div>
                   <div className="bg-indigo-500/10 border border-indigo-500/20 rounded-2xl rounded-tl-md px-5 py-3.5">
                     <p className="text-sm sm:text-base text-slate-200 leading-relaxed">
@@ -173,7 +173,7 @@ export default function Hero({ onWatchDemo }: { onWatchDemo: () => void }) {
                   className="flex gap-3 max-w-lg"
                 >
                   <div className="w-8 h-8 rounded-full bg-gradient-to-br from-sky-500 to-indigo-500 flex items-center justify-center flex-shrink-0 mt-1">
-                    <span className="text-xs font-bold">H</span>
+                    <span className="text-xs font-bold">E</span>
                   </div>
                   <div className="space-y-3">
                     <div className="bg-indigo-500/10 border border-indigo-500/20 rounded-2xl rounded-tl-md px-5 py-3.5">

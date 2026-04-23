@@ -1,4 +1,4 @@
-// HarborAI Agent Copilot - Dark Theme
+// easefinancials Agent Copilot - Dark Theme
 // Bloomberg Terminal + VS Code aesthetic with accent colors
 
 export const theme = {

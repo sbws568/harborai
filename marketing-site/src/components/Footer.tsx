@@ -1,4 +1,4 @@
-import { Anchor, Github, Linkedin, Twitter } from 'lucide-react'
+import { TrendingUp, Github, Linkedin, Twitter } from 'lucide-react'
 
 const footerLinks = {
   Product: [
@@ -40,10 +40,10 @@ export default function Footer() {
           <div className="col-span-2">
             <a href="#" className="flex items-center gap-2.5 mb-4">
               <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-sky-500 via-indigo-500 to-violet-500 flex items-center justify-center">
-                <Anchor className="w-4 h-4 text-white" strokeWidth={2.5} />
+                <TrendingUp className="w-4 h-4 text-white" strokeWidth={2.5} />
               </div>
               <span className="text-lg font-bold">
-                Harbor<span className="gradient-text">AI</span>
+                ease<span className="gradient-text">financials</span>
               </span>
             </a>
             <p className="text-sm text-slate-400 mb-6 max-w-xs leading-relaxed">
@@ -86,7 +86,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-slate-500">
-            &copy; {new Date().getFullYear()} HarborAI, Inc. All rights reserved.
+            &copy; {new Date().getFullYear()} easefinancials, Inc. All rights reserved.
           </p>
           <div className="flex items-center gap-4 text-xs text-slate-500">
             <span className="flex items-center gap-1.5">

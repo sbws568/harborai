@@ -41,12 +41,12 @@ export default function CTA() {
 
           <p className="text-lg text-slate-400 max-w-xl mx-auto mb-12 text-balance">
             Join leading lending institutions that are replacing rigid questionnaires with
-            AI-powered empathy. See HarborAI in action with your own data.
+            AI-powered empathy. See easefinancials in action with your own data.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <a
-              href="mailto:demo@harborai.com"
+              href="mailto:demo@easefinancials.com"
               className="group w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-sky-500 via-indigo-500 to-violet-500 font-semibold text-lg shadow-2xl shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3"
             >
               <Calendar className="w-5 h-5" />
@@ -54,7 +54,7 @@ export default function CTA() {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="mailto:hello@harborai.com"
+              href="mailto:hello@easefinancials.com"
               className="group w-full sm:w-auto px-8 py-4 rounded-2xl glass font-semibold text-lg hover:bg-white/10 transition-all flex items-center justify-center gap-3"
             >
               <Mail className="w-5 h-5" />

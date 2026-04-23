@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "HarborAI",
-    "slug": "harbor-ai",
+    "newArchEnabled": false,
+    "name": "Easefinancials",
+    "slug": "easefinancials",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -13,14 +14,14 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.harborai.app"
+      "bundleIdentifier": "com.easefinancials.app"
     },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#0EA5E9"
       },
-      "package": "com.harborai.app"
+      "package": "com.easefinancials.app"
     },
-    "plugins": ["expo-haptics"]
+    "plugins": []
   }
 }
