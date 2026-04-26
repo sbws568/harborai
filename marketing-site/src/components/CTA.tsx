@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { ArrowRight, Calendar, Mail } from 'lucide-react'
 
-export default function CTA() {
+export default function CTA({ onContact }: { onContact: (subject?: string) => void }) {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true })
 
   return (
@@ -45,21 +45,21 @@ export default function CTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-            <a
-              href="mailto:demo@easefinancials.com"
+            <button
+              onClick={() => onContact('Book a Demo — easefinancials')}
               className="group w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-sky-500 via-indigo-500 to-violet-500 font-semibold text-lg shadow-2xl shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-3"
             >
               <Calendar className="w-5 h-5" />
               Book a Demo
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a
-              href="mailto:hello@easefinancials.com"
+            </button>
+            <button
+              onClick={() => onContact('Contact Sales — easefinancials')}
               className="group w-full sm:w-auto px-8 py-4 rounded-2xl glass font-semibold text-lg hover:bg-white/10 transition-all flex items-center justify-center gap-3"
             >
               <Mail className="w-5 h-5" />
               Contact Sales
-            </a>
+            </button>
           </div>
 
           {/* Trust elements */}

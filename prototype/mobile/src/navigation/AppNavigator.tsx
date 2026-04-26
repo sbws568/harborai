@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Platform } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Ionicons } from '@expo/vector-icons';
 import { useTheme } from '../context/ThemeContext';
 
 import HomeScreen from '../screens/HomeScreen';
@@ -10,12 +10,6 @@ import ChatScreen from '../screens/ChatScreen';
 import OffersScreen from '../screens/OffersScreen';
 import MyPlanScreen from '../screens/MyPlanScreen';
 import SettingsScreen from '../screens/SettingsScreen';
-
-type RootStackParamList = {
-  MainTabs: undefined;
-  Chat: undefined;
-  Offers: undefined;
-};
 
 type TabParamList = {
   Home: undefined;
@@ -25,27 +19,30 @@ type TabParamList = {
   Settings: undefined;
 };
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+type IoniconName = React.ComponentProps<typeof Ionicons>['name'];
+
 const Tab = createBottomTabNavigator<TabParamList>();
 
 interface TabIconProps {
-  emoji: string;
+  name: IoniconName;
+  nameActive: IoniconName;
   label: string;
   focused: boolean;
-  color: string;
 }
 
-const TabIcon: React.FC<TabIconProps> = ({ emoji, label, focused, color }) => {
+const TabIcon: React.FC<TabIconProps> = ({ name, nameActive, label, focused }) => {
   const { theme } = useTheme();
+  const activeColor = '#6366F1';
+  const inactiveColor = theme.dark ? '#6B7280' : '#9CA3AF';
+
   return (
     <View style={styles.tabIcon}>
-      <Text style={[styles.tabEmoji, focused && styles.tabEmojiActive]}>{emoji}</Text>
-      <Text
-        style={[
-          styles.tabLabel,
-          { color: focused ? theme.colors.indigo : theme.colors.textTertiary },
-        ]}
-      >
+      <Ionicons
+        name={focused ? nameActive : name}
+        size={22}
+        color={focused ? activeColor : inactiveColor}
+      />
+      <Text style={[styles.tabLabel, { color: focused ? activeColor : inactiveColor }]}>
         {label}
       </Text>
     </View>
@@ -60,11 +57,11 @@ const MainTabs: React.FC = () => {
       screenOptions={{
         tabBarStyle: {
           backgroundColor: theme.colors.surface,
-          borderTopColor: theme.colors.borderLight,
+          borderTopColor: theme.dark ? '#1F2937' : '#F3F4F6',
           borderTopWidth: 1,
-          height: 85,
+          height: Platform.OS === 'ios' ? 88 : 64,
           paddingTop: 8,
-          paddingBottom: 24,
+          paddingBottom: Platform.OS === 'ios' ? 28 : 8,
         },
         tabBarShowLabel: false,
         headerStyle: {
@@ -82,14 +79,15 @@ const MainTabs: React.FC = () => {
         name="Home"
         component={HomeScreen}
         options={{
-          headerTitle: 'HarborAI',
+          headerTitle: 'Easefinancials',
           headerTitleStyle: {
-            color: theme.colors.indigo,
+            color: '#6366F1',
             fontWeight: '800',
             fontSize: 20,
+            letterSpacing: -0.3,
           },
-          tabBarIcon: ({ focused, color }) => (
-            <TabIcon emoji="🏠" label="Home" focused={focused} color={color} />
+          tabBarIcon: ({ focused }) => (
+            <TabIcon name="home-outline" nameActive="home" label="Home" focused={focused} />
           ),
         }}
       />
@@ -97,9 +95,19 @@ const MainTabs: React.FC = () => {
         name="Chat"
         component={ChatScreen}
         options={{
-          headerTitle: 'Harbor AI Chat',
-          tabBarIcon: ({ focused, color }) => (
-            <TabIcon emoji="💬" label="Chat" focused={focused} color={color} />
+          headerTitle: 'Arya · AI Counselor',
+          headerTitleStyle: {
+            color: '#6366F1',
+            fontWeight: '700',
+            fontSize: 17,
+          },
+          tabBarIcon: ({ focused }) => (
+            <TabIcon
+              name="chatbubble-ellipses-outline"
+              nameActive="chatbubble-ellipses"
+              label="Chat"
+              focused={focused}
+            />
           ),
         }}
       />
@@ -108,8 +116,13 @@ const MainTabs: React.FC = () => {
         component={OffersScreen}
         options={{
           headerTitle: 'Your Offers',
-          tabBarIcon: ({ focused, color }) => (
-            <TabIcon emoji="🎯" label="Offers" focused={focused} color={color} />
+          tabBarIcon: ({ focused }) => (
+            <TabIcon
+              name="shield-checkmark-outline"
+              nameActive="shield-checkmark"
+              label="Offers"
+              focused={focused}
+            />
           ),
         }}
       />
@@ -118,8 +131,13 @@ const MainTabs: React.FC = () => {
         component={MyPlanScreen}
         options={{
           headerTitle: 'My Plan',
-          tabBarIcon: ({ focused, color }) => (
-            <TabIcon emoji="📋" label="Plan" focused={focused} color={color} />
+          tabBarIcon: ({ focused }) => (
+            <TabIcon
+              name="bar-chart-outline"
+              nameActive="bar-chart"
+              label="Plan"
+              focused={focused}
+            />
           ),
         }}
       />
@@ -128,8 +146,13 @@ const MainTabs: React.FC = () => {
         component={SettingsScreen}
         options={{
           headerTitle: 'Settings',
-          tabBarIcon: ({ focused, color }) => (
-            <TabIcon emoji="⚙️" label="Settings" focused={focused} color={color} />
+          tabBarIcon: ({ focused }) => (
+            <TabIcon
+              name="person-circle-outline"
+              nameActive="person-circle"
+              label="Profile"
+              focused={focused}
+            />
           ),
         }}
       />
@@ -138,18 +161,9 @@ const MainTabs: React.FC = () => {
 };
 
 const AppNavigator: React.FC = () => {
-  const { theme } = useTheme();
-
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-          contentStyle: { backgroundColor: theme.colors.background },
-        }}
-      >
-        <Stack.Screen name="MainTabs" component={MainTabs} />
-      </Stack.Navigator>
+      <MainTabs />
     </NavigationContainer>
   );
 };
@@ -158,19 +172,12 @@ const styles = StyleSheet.create({
   tabIcon: {
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  tabEmoji: {
-    fontSize: 22,
-    opacity: 0.6,
-  },
-  tabEmojiActive: {
-    opacity: 1,
-    fontSize: 24,
+    gap: 3,
   },
   tabLabel: {
     fontSize: 10,
     fontWeight: '600',
-    marginTop: 2,
+    letterSpacing: 0.2,
   },
 });
 

@@ -10,7 +10,7 @@ const navLinks = [
   { label: 'Pricing', href: '#pricing' },
 ]
 
-export default function Navbar({ onWatchDemo }: { onWatchDemo: () => void }) {
+export default function Navbar({ onWatchDemo, onContact }: { onWatchDemo: () => void; onContact: (subject?: string) => void }) {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -62,12 +62,12 @@ export default function Navbar({ onWatchDemo }: { onWatchDemo: () => void }) {
             <button onClick={onWatchDemo} className="text-sm text-slate-300 hover:text-white transition-colors">
               Watch Demo
             </button>
-            <a
-              href="#contact"
+            <button
+              onClick={() => onContact('Book a Demo — easefinancials')}
               className="px-5 py-2.5 text-sm font-semibold rounded-full bg-gradient-to-r from-sky-500 via-indigo-500 to-violet-500 hover:shadow-lg hover:shadow-indigo-500/25 transition-all hover:scale-105 active:scale-95"
             >
               Get Started
-            </a>
+            </button>
           </div>
 
           {/* Mobile Toggle */}
@@ -101,12 +101,12 @@ export default function Navbar({ onWatchDemo }: { onWatchDemo: () => void }) {
                 </a>
               ))}
               <div className="pt-6 border-t border-white/10">
-                <a
-                  href="#contact"
+                <button
+                  onClick={() => { setMobileOpen(false); onContact('Book a Demo — easefinancials') }}
                   className="block w-full text-center px-6 py-3 font-semibold rounded-full bg-gradient-to-r from-sky-500 via-indigo-500 to-violet-500"
                 >
                   Get Started
-                </a>
+                </button>
               </div>
             </div>
           </motion.div>

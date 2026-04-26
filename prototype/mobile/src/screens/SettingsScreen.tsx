@@ -215,7 +215,7 @@ const SettingsScreen: React.FC = () => {
 
       {/* Version */}
       <Text style={[styles.version, { color: theme.colors.textTertiary }]}>
-        HarborAI v1.0.0
+        Easefinancials v1.0.0
       </Text>
 
       <View style={styles.bottomSpacer} />

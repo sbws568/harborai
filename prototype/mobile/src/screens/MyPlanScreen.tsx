@@ -164,14 +164,14 @@ const MyPlanScreen: React.FC<{ navigation: any }> = ({ navigation }) => {
           Need to adjust your plan?
         </Text>
         <Text style={[styles.helpText, { color: theme.colors.textSecondary }]}>
-          If your situation has changed, chat with Harbor AI to explore modifications.
+          If your situation has changed, chat with Easefinancials to explore modifications.
         </Text>
         <TouchableOpacity
           style={[styles.helpButton, { borderColor: theme.colors.indigo }]}
           onPress={() => navigation.navigate('Chat')}
         >
           <Text style={[styles.helpButtonText, { color: theme.colors.indigo }]}>
-            💬 Chat with Harbor AI
+            💬 Chat with Easefinancials
           </Text>
         </TouchableOpacity>
       </View>

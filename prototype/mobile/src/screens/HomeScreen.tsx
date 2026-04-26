@@ -77,10 +77,17 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
           <Text style={[styles.userName, { color: theme.colors.text }]}>{user.firstName}</Text>
         </View>
         <TouchableOpacity
-          style={[styles.profileButton, { backgroundColor: theme.colors.indigo }]}
+          style={styles.profileButton}
           onPress={() => navigation.navigate('Settings')}
         >
-          <Text style={styles.profileInitial}>A</Text>
+          <LinearGradient
+            colors={['#6366F1', '#8B5CF6']}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+            style={styles.profileGradient}
+          >
+            <Text style={styles.profileInitial}>A</Text>
+          </LinearGradient>
         </TouchableOpacity>
       </View>
 
@@ -148,7 +155,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
           <Text style={styles.ctaEmoji}>🌊</Text>
           <Text style={styles.ctaTitle}>Going through a tough time?</Text>
           <Text style={styles.ctaSubtitle}>
-            We're here to help. Chat with Harbor AI to explore options that work for your situation.
+            We're here to help. Chat with Easefinancials to explore options that work for your situation.
           </Text>
           <TouchableOpacity
             style={styles.ctaButton}
@@ -191,7 +198,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ navigation }) => {
             No active plans yet
           </Text>
           <Text style={[styles.noPlanText, { color: theme.colors.textSecondary }]}>
-            Start a chat with Harbor AI to explore settlement and payment options tailored to you.
+            Start a chat with Easefinancials to explore settlement and payment options tailored to you.
           </Text>
         </View>
       )}
@@ -254,6 +261,11 @@ const styles = StyleSheet.create({
     width: 44,
     height: 44,
     borderRadius: 22,
+    overflow: 'hidden',
+  },
+  profileGradient: {
+    width: 44,
+    height: 44,
     justifyContent: 'center',
     alignItems: 'center',
   },

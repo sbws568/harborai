@@ -187,9 +187,9 @@ export default function Products() {
   const { ref: copilotRef, inView: copilotInView } = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
-    <section id="products" className="relative py-16 overflow-hidden">
+    <section id="products" className="relative py-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-20">
+        <div className="text-center mb-10">
           <span className="text-sm font-semibold text-indigo-400 tracking-wider uppercase mb-3 block">
             Two Products, One Platform
           </span>
@@ -199,8 +199,8 @@ export default function Products() {
         </div>
 
         {/* Mobile App */}
-        <div ref={mobileRef} className="mb-16">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div ref={mobileRef} className="mb-10">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               animate={mobileInView ? { opacity: 1, x: 0 } : {}}
@@ -236,15 +236,23 @@ export default function Products() {
               initial={{ opacity: 0, y: 40 }}
               animate={mobileInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7, delay: 0.2 }}
+              className="flex flex-col items-center gap-4"
             >
-              <PhoneApp scale={0.62} />
+              <PhoneApp scale={0.72} />
+              <div className="flex items-center gap-2.5 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20" style={{ marginTop: '-100px' }}>
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+                </span>
+                <span className="text-xs font-medium text-emerald-400">Working demo — interact with the app to experience the real look &amp; feel</span>
+              </div>
             </motion.div>
           </div>
         </div>
 
         {/* Agent Copilot */}
         <div ref={copilotRef}>
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={copilotInView ? { opacity: 1, y: 0 } : {}}

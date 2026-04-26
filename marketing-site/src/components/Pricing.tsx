@@ -65,7 +65,7 @@ const tiers = [
   },
 ]
 
-export default function Pricing() {
+export default function Pricing({ onContact }: { onContact: (subject?: string) => void }) {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true })
 
   return (
@@ -135,8 +135,12 @@ export default function Pricing() {
                 ))}
               </div>
 
-              <a
-                href="#contact"
+              <button
+                onClick={() => onContact(
+                  tier.name === 'Enterprise'
+                    ? 'Contact Sales — easefinancials'
+                    : 'Book a Demo — easefinancials'
+                )}
                 className={`block w-full text-center py-3 rounded-xl font-semibold transition-all hover:scale-[1.02] active:scale-[0.98] ${
                   tier.popular
                     ? 'bg-gradient-to-r from-indigo-500 to-violet-500 text-white shadow-lg shadow-indigo-500/25'
@@ -144,7 +148,7 @@ export default function Pricing() {
                 }`}
               >
                 {tier.cta}
-              </a>
+              </button>
             </motion.div>
           ))}
         </div>

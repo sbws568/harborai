@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRight, Play, Shield, Zap, Heart } from 'lucide-react'
 
-export default function Hero({ onWatchDemo }: { onWatchDemo: () => void }) {
+export default function Hero({ onWatchDemo, onContact }: { onWatchDemo: () => void; onContact: (subject?: string) => void }) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Animated background gradient orbs */}
@@ -61,13 +61,13 @@ export default function Hero({ onWatchDemo }: { onWatchDemo: () => void }) {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20"
         >
-          <a
-            href="#contact"
+          <button
+            onClick={() => onContact('Book a Demo — easefinancials')}
             className="group px-8 py-4 rounded-full bg-gradient-to-r from-sky-500 via-indigo-500 to-violet-500 font-semibold text-lg shadow-2xl shadow-indigo-500/25 hover:shadow-indigo-500/40 transition-all hover:scale-105 active:scale-95 flex items-center gap-2"
           >
             Request a Demo
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </button>
           <button
             onClick={onWatchDemo}
             className="group px-8 py-4 rounded-full glass font-semibold text-lg hover:bg-white/10 transition-all flex items-center gap-2"
